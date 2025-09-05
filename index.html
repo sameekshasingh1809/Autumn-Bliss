@@ -7,34 +7,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Poppins',sans-serif;color:#222;background:#fffefc;line-height:1.6}
+    body{font-family:'Poppins',sans-serif;color:#3a2c2c;background:#fffaf6;line-height:1.6}
 
+    /* Header */
     header{
-      background:url('https://source.unsplash.com/1600x800/?candles,aroma') center/cover no-repeat;
+      background:url('https://images.unsplash.com/photo-1504544750208-dc0358e63f7f') center/cover no-repeat;
       color:#fff;
       text-align:center;
-      padding:100px 20px;
+      padding:120px 20px;
       position:relative;
     }
     header::after{
       content:"";
-      position:absolute;
-      top:0;left:0;width:100%;height:100%;
-      background:rgba(0,0,0,0.45);
+      position:absolute;top:0;left:0;width:100%;height:100%;
+      background:rgba(42,25,25,0.55);
     }
-    header .content{
-      position:relative;
-      z-index:2;
+    header .content{position:relative;z-index:2}
+    header img.logo{
+      width:120px;height:auto;margin-bottom:20px;border-radius:50%;border:3px solid #fff;
     }
     header h1{
       font-family:'Playfair Display',serif;
-      font-size:48px;
-      margin-bottom:20px;
+      font-size:50px;margin-bottom:20px;color:#fcebd0;
     }
-    header p{font-size:18px;margin-bottom:30px}
+    header p{font-size:18px;margin-bottom:30px;color:#fff}
     .cta{
-      padding:14px 28px;
-      background:#d46a6a;
+      padding:14px 32px;
+      background:#a05252;
       color:#fff;
       border:none;
       border-radius:40px;
@@ -42,38 +41,39 @@
       cursor:pointer;
       transition:background .3s
     }
-    .cta:hover{background:#b85c5c}
+    .cta:hover{background:#8b4040}
 
-    .section{padding:60px 20px;max-width:1100px;margin:auto;text-align:center}
+    .section{padding:70px 20px;max-width:1100px;margin:auto;text-align:center}
 
-    /* Featured products */
-    .collections{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+    /* Products */
+    .collections{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:30px}
     .box{
       flex:1 1 220px;
-      border:1px solid #eee;
-      border-radius:12px;
+      border:none;
+      border-radius:16px;
       overflow:hidden;
       background:#fff;
-      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
       transition:transform .3s;
     }
-    .box:hover{transform:translateY(-5px)}
-    .box img{width:100%;height:180px;object-fit:cover}
-    .box h3{margin:15px 0 8px;color:#d46a6a}
-    .box p{padding:0 10px 20px}
+    .box:hover{transform:translateY(-8px)}
+    .box img{width:100%;height:200px;object-fit:cover}
+    .box h3{margin:15px 0 8px;color:#a05252;font-family:'Playfair Display',serif}
+    .box p{padding:0 15px 20px;font-size:14px;color:#555}
 
     /* About */
-    .about{background:#fff5f5;border-radius:12px;padding:40px}
+    .about{background:#fcebd0;border-radius:16px;padding:50px;margin-top:40px}
+    .about p{max-width:700px;margin:auto;font-size:16px;color:#4d3b3b}
 
     /* Gallery */
     .gallery-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
       gap:20px;
-      margin-top:30px
+      margin-top:40px
     }
     .gallery-grid img{
-      width:100%;height:200px;object-fit:cover;border-radius:12px
+      width:100%;height:220px;object-fit:cover;border-radius:16px
     }
 
     /* Contact */
@@ -82,43 +82,44 @@
       flex-direction:column;
       gap:15px;
       max-width:500px;
-      margin:20px auto 0;
+      margin:30px auto 0;
       text-align:left;
     }
     .contact-form input,.contact-form textarea{
-      padding:12px;
+      padding:14px;
       border:1px solid #ccc;
-      border-radius:8px;
+      border-radius:10px;
       font-size:15px;
       width:100%;
     }
     .contact-form button{
-      background:#d46a6a;
+      background:#a05252;
       color:#fff;
       padding:14px;
       border:none;
-      border-radius:8px;
+      border-radius:10px;
       font-size:16px;
       cursor:pointer;
     }
-    .contact-form button:hover{background:#b85c5c}
+    .contact-form button:hover{background:#8b4040}
 
     footer{
-      background:#fceeee;
+      background:#fcebd0;
       padding:30px 20px;
       text-align:center;
       font-size:14px;
-      margin-top:40px;
+      margin-top:50px;
+      color:#4d3b3b;
     }
 
     /* Responsive */
     @media(max-width:768px){
-      header h1{font-size:32px}
+      header h1{font-size:34px}
       header p{font-size:16px}
       .box{flex:1 1 100%}
     }
     @media(max-width:480px){
-      header{padding:70px 20px}
+      header{padding:80px 20px}
       header h1{font-size:26px}
       header p{font-size:14px}
     }
@@ -129,6 +130,7 @@
   <!-- Hero Section -->
   <header>
     <div class="content">
+      <img src="https://img.icons8.com/?size=512&id=39890&format=png" alt="Autumn Bliss Logo" class="logo">
       <h1>Autumn Bliss</h1>
       <p>Luxury hand-poured candles that bring warmth, calm, and bliss to your everyday moments.</p>
       <button class="cta">🕯 Shop Now</button>
@@ -140,22 +142,22 @@
     <h2>✨ Featured Collection</h2>
     <div class="collections">
       <div class="box">
-        <img src="https://source.unsplash.com/400x400/?candle,rose" alt="Rose Candle">
+        <img src="https://images.unsplash.com/photo-1602872029119-30d2a3a5d8ba" alt="Rose Candle">
         <h3>Rose Glow</h3>
         <p>Romantic floral fragrance with soft rose notes.</p>
       </div>
       <div class="box">
-        <img src="https://source.unsplash.com/400x400/?candle,lavender" alt="Lavender Candle">
+        <img src="https://images.unsplash.com/photo-1596386461350-04c196b2d8cd" alt="Lavender Candle">
         <h3>Lavender Calm</h3>
         <p>Relaxing lavender essence for peaceful nights.</p>
       </div>
       <div class="box">
-        <img src="https://source.unsplash.com/400x400/?candle,vanilla" alt="Vanilla Candle">
+        <img src="https://images.unsplash.com/photo-1616627781823-5e60f7ce2491" alt="Vanilla Candle">
         <h3>Vanilla Bliss</h3>
         <p>Sweet vanilla warmth for cozy evenings.</p>
       </div>
       <div class="box">
-        <img src="https://source.unsplash.com/400x400/?candle,coffee" alt="Coffee Candle">
+        <img src="https://images.unsplash.com/photo-1505575967455-40e256f73376" alt="Coffee Candle">
         <h3>Mocha Delight</h3>
         <p>Coffee-inspired scent for energy & comfort.</p>
       </div>
@@ -173,10 +175,10 @@
   <section class="section">
     <h2>🌸 Candle Moments</h2>
     <div class="gallery-grid">
-      <img src="https://source.unsplash.com/400x400/?candle,home" alt="Candle home">
-      <img src="https://source.unsplash.com/400x400/?candle,decor" alt="Candle decor">
-      <img src="https://source.unsplash.com/400x400/?candle,spa" alt="Candle spa">
-      <img src="https://source.unsplash.com/400x400/?candle,aroma" alt="Candle aroma">
+      <img src="https://images.unsplash.com/photo-1602872030008-bdf7e4b7aa90" alt="Candle home">
+      <img src="https://images.unsplash.com/photo-1607082349566-18734277c92f" alt="Candle decor">
+      <img src="https://images.unsplash.com/photo-1603010428754-1cfb2d2b7035" alt="Candle spa">
+      <img src="https://images.unsplash.com/photo-1602872029231-98d4b596cb74" alt="Candle aroma">
     </div>
   </section>
 
@@ -200,3 +202,4 @@
 
 </body>
 </html>
+
