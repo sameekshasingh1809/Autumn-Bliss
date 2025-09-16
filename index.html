@@ -5,48 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Autumn Bliss | Scented Candles</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Floating flower animation */
+    .float-flower {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      animation: float 12s linear infinite;
+      opacity: 0.5;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.4; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
 </head>
-<body class="bg-rose-50 text-stone-700">
+<body class="bg-rose-50 text-stone-700 overflow-x-hidden">
+
+  <!-- Floating flowers background -->
+  <div class="pointer-events-none fixed inset-0 overflow-hidden -z-10">
+    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="float-flower left-[10%]" style="animation-delay: 0s">
+    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="float-flower left-[30%]" style="animation-delay: 3s">
+    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="float-flower left-[50%]" style="animation-delay: 6s">
+    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="float-flower left-[70%]" style="animation-delay: 2s">
+    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="float-flower left-[90%]" style="animation-delay: 5s">
+  </div>
+
+  <!-- Navbar -->
+  <header class="bg-rose-100/60 backdrop-blur-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-rose-300 rounded-full"></div> <!-- logo placeholder -->
+        <span class="text-2xl font-serif font-bold text-rose-900">Autumn Bliss</span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-rose-800 font-medium">
+        <a href="#" class="hover:text-rose-500">Home</a>
+        <a href="#" class="hover:text-rose-500">Shop</a>
+        <a href="#" class="hover:text-rose-500">About</a>
+        <a href="#" class="hover:text-rose-500">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 py-24 text-center">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-rose-800 font-serif tracking-tight">Autumn Bliss</h1>
-      <p class="mt-4 text-lg text-rose-600 max-w-xl mx-auto">Hand-poured scented candles that wrap your world in cozy autumn magic.</p>
-      <button class="mt-6 px-6 py-3 rounded-full bg-rose-300 hover:bg-rose-400 text-rose-900 font-semibold shadow-md transition">Shop Now</button>
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-6 py-28 text-center">
+      <h1 class="text-6xl md:text-7xl font-extrabold text-rose-900 font-serif tracking-tight">Cozy Autumn Glow</h1>
+      <p class="mt-4 text-lg text-rose-700 max-w-xl mx-auto">Hand-poured scented candles that wrap your world in cozy autumn magic.</p>
+      <button class="mt-6 px-8 py-3 rounded-full bg-rose-300 hover:bg-rose-400 text-rose-900 font-semibold shadow-md transition">Shop Now</button>
     </div>
-    <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-rose-100 rounded-full blur-3xl opacity-40"></div>
+    <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-40"></div>
     <div class="absolute -top-16 -right-16 w-72 h-72 bg-orange-100 rounded-full blur-3xl opacity-40"></div>
   </section>
 
   <!-- Featured Candles -->
   <section class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-bold text-center text-rose-800 mb-10">Our Featured Candles</h2>
+    <h2 class="text-3xl font-bold text-center text-rose-900 mb-10">Our Featured Candles</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-3xl shadow-lg p-6 text-center">
-        <div class="h-48 bg-rose-100 rounded-2xl mb-4"></div>
-        <h3 class="text-xl font-semibold text-rose-700">Pumpkin Spice</h3>
-        <p class="text-rose-500 mt-1 text-sm">Warm cinnamon & clove</p>
+      <div class="bg-white rounded-3xl shadow-lg p-6 text-center hover:-translate-y-1 transition">
+        <div class="h-48 bg-gradient-to-br from-rose-100 to-rose-50 rounded-2xl mb-4"></div>
+        <h3 class="text-xl font-semibold text-rose-800">Pumpkin Spice</h3>
+        <p class="text-rose-600 mt-1 text-sm">Warm cinnamon & clove</p>
       </div>
-      <div class="bg-white rounded-3xl shadow-lg p-6 text-center">
-        <div class="h-48 bg-rose-100 rounded-2xl mb-4"></div>
-        <h3 class="text-xl font-semibold text-rose-700">Vanilla Chai</h3>
-        <p class="text-rose-500 mt-1 text-sm">Creamy & comforting</p>
+      <div class="bg-white rounded-3xl shadow-lg p-6 text-center hover:-translate-y-1 transition">
+        <div class="h-48 bg-gradient-to-br from-rose-100 to-orange-50 rounded-2xl mb-4"></div>
+        <h3 class="text-xl font-semibold text-rose-800">Vanilla Chai</h3>
+        <p class="text-rose-600 mt-1 text-sm">Creamy & comforting</p>
       </div>
-      <div class="bg-white rounded-3xl shadow-lg p-6 text-center">
-        <div class="h-48 bg-rose-100 rounded-2xl mb-4"></div>
-        <h3 class="text-xl font-semibold text-rose-700">Maple Woods</h3>
-        <p class="text-rose-500 mt-1 text-sm">Sweet and earthy</p>
+      <div class="bg-white rounded-3xl shadow-lg p-6 text-center hover:-translate-y-1 transition">
+        <div class="h-48 bg-gradient-to-br from-rose-100 to-peach-50 rounded-2xl mb-4"></div>
+        <h3 class="text-xl font-semibold text-rose-800">Maple Woods</h3>
+        <p class="text-rose-600 mt-1 text-sm">Sweet and earthy</p>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section class="bg-rose-100 py-20">
+  <section class="bg-rose-50 py-20">
     <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
       <div class="flex-1 h-64 bg-rose-200 rounded-2xl"></div>
       <div class="flex-1">
-        <h2 class="text-3xl font-bold text-rose-800 mb-4">About Autumn Bliss</h2>
+        <h2 class="text-3xl font-bold text-rose-900 mb-4">About Autumn Bliss</h2>
         <p class="text-rose-700 leading-relaxed">Each Autumn Bliss candle is hand-crafted with love to bring you warm, nostalgic autumn vibes all year round. Our eco-friendly soy wax blends and gentle scents create cozy memories in every flicker.</p>
       </div>
     </div>
@@ -54,17 +94,17 @@
 
   <!-- Testimonials -->
   <section class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-bold text-center text-rose-800 mb-10">What Our Customers Say</h2>
+    <h2 class="text-3xl font-bold text-center text-rose-900 mb-10">What Our Customers Say</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-3xl p-6 shadow-md">
+      <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-lg transition">
         <p class="text-rose-700 italic">“The Pumpkin Spice candle smells like fall in a jar. I’m obsessed!”</p>
         <p class="mt-4 text-rose-500 font-semibold">— Emily</p>
       </div>
-      <div class="bg-white rounded-3xl p-6 shadow-md">
+      <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-lg transition">
         <p class="text-rose-700 italic">“So cozy and calming. I light it every night.”</p>
         <p class="mt-4 text-rose-500 font-semibold">— Mia</p>
       </div>
-      <div class="bg-white rounded-3xl p-6 shadow-md">
+      <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-lg transition">
         <p class="text-rose-700 italic">“The packaging is just as beautiful as the scent.”</p>
         <p class="mt-4 text-rose-500 font-semibold">— Chloe</p>
       </div>
@@ -79,3 +119,4 @@
 
 </body>
 </html>
+
