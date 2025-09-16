@@ -5,118 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Autumn Bliss | Scented Candles</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    /* Floating flower animation */
-    .float-flower {
+    body {
+      background: linear-gradient(#fff7f5, #ffe9e3);
+      overflow-x: hidden;
+    }
+    .floating-flower {
       position: absolute;
-      width: 32px;
-      height: 32px;
-      animation: float 12s linear infinite;
-      opacity: 0.5;
+      width: 40px;
+      opacity: 0.2;
+      animation: float 10s infinite linear;
     }
     @keyframes float {
-      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      20% { opacity: 0.4; }
-      100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-100vh) rotate(360deg); }
     }
   </style>
 </head>
-<body class="bg-rose-50 text-stone-700 overflow-x-hidden">
+<body class="relative font-[Playfair Display] text-brown-900">
 
-  <!-- Floating flowers background -->
-  <div class="pointer-events-none fixed inset-0 overflow-hidden -z-10">
-    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="float-flower left-[10%]" style="animation-delay: 0s">
-    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="float-flower left-[30%]" style="animation-delay: 3s">
-    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="float-flower left-[50%]" style="animation-delay: 6s">
-    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="float-flower left-[70%]" style="animation-delay: 2s">
-    <img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png" class="float-flower left-[90%]" style="animation-delay: 5s">
-  </div>
+  <!-- 🌸 Floating flowers background -->
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="floating-flower top-[90%] left-[10%]" style="animation-delay: 0s;">
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="floating-flower top-[95%] left-[40%]" style="animation-delay: 3s;">
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="floating-flower top-[85%] left-[70%]" style="animation-delay: 6s;">
 
-  <!-- Navbar -->
-  <header class="bg-rose-100/60 backdrop-blur-sm sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <div class="flex items-center gap-3">
-        <div class="w-12 h-12 bg-rose-300 rounded-full"></div> <!-- logo placeholder -->
-        <span class="text-2xl font-serif font-bold text-rose-900">Autumn Bliss</span>
+  <!-- 🌼 Hero -->
+  <section class="relative z-10 text-center py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Logo placeholder -->
+      <div class="mb-6">
+        <div class="mx-auto w-24 h-24 bg-pink-200/50 rounded-full flex items-center justify-center shadow-md">
+          <span class="font-[Pacifico] text-2xl text-rose-600">Logo</span>
+        </div>
       </div>
-      <nav class="hidden md:flex gap-6 text-rose-800 font-medium">
-        <a href="#" class="hover:text-rose-500">Home</a>
-        <a href="#" class="hover:text-rose-500">Shop</a>
-        <a href="#" class="hover:text-rose-500">About</a>
-        <a href="#" class="hover:text-rose-500">Contact</a>
-      </nav>
+      <h1 class="text-5xl font-bold text-rose-700 mb-4">Autumn Bliss</h1>
+      <p class="text-lg text-rose-500 mb-6">Cozy, elegant scented candles to warm your soul ✨</p>
+      <a href="#featured" class="bg-rose-400 text-white px-6 py-3 rounded-full shadow hover:bg-rose-500 transition">Shop Now</a>
     </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="relative">
-    <div class="max-w-7xl mx-auto px-6 py-28 text-center">
-      <h1 class="text-6xl md:text-7xl font-extrabold text-rose-900 font-serif tracking-tight">Cozy Autumn Glow</h1>
-      <p class="mt-4 text-lg text-rose-700 max-w-xl mx-auto">Hand-poured scented candles that wrap your world in cozy autumn magic.</p>
-      <button class="mt-6 px-8 py-3 rounded-full bg-rose-300 hover:bg-rose-400 text-rose-900 font-semibold shadow-md transition">Shop Now</button>
-    </div>
-    <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-40"></div>
-    <div class="absolute -top-16 -right-16 w-72 h-72 bg-orange-100 rounded-full blur-3xl opacity-40"></div>
   </section>
 
-  <!-- Featured Candles -->
-  <section class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-bold text-center text-rose-900 mb-10">Our Featured Candles</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-3xl shadow-lg p-6 text-center hover:-translate-y-1 transition">
-        <div class="h-48 bg-gradient-to-br from-rose-100 to-rose-50 rounded-2xl mb-4"></div>
-        <h3 class="text-xl font-semibold text-rose-800">Pumpkin Spice</h3>
-        <p class="text-rose-600 mt-1 text-sm">Warm cinnamon & clove</p>
-      </div>
-      <div class="bg-white rounded-3xl shadow-lg p-6 text-center hover:-translate-y-1 transition">
-        <div class="h-48 bg-gradient-to-br from-rose-100 to-orange-50 rounded-2xl mb-4"></div>
-        <h3 class="text-xl font-semibold text-rose-800">Vanilla Chai</h3>
-        <p class="text-rose-600 mt-1 text-sm">Creamy & comforting</p>
-      </div>
-      <div class="bg-white rounded-3xl shadow-lg p-6 text-center hover:-translate-y-1 transition">
-        <div class="h-48 bg-gradient-to-br from-rose-100 to-peach-50 rounded-2xl mb-4"></div>
-        <h3 class="text-xl font-semibold text-rose-800">Maple Woods</h3>
-        <p class="text-rose-600 mt-1 text-sm">Sweet and earthy</p>
+  <!-- 🌸 Featured Candles -->
+  <section id="featured" class="relative z-10 py-20 px-6 bg-white/70 rounded-t-3xl backdrop-blur-sm">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-rose-700 mb-10">Our Featured Candles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-2xl shadow-md">
+          <div class="w-full h-48 bg-rose-100 rounded-xl mb-4"></div>
+          <h3 class="text-xl text-rose-600 font-semibold mb-2">Blush Bloom</h3>
+          <p class="text-sm text-rose-400">Soft rose & vanilla notes</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md">
+          <div class="w-full h-48 bg-rose-100 rounded-xl mb-4"></div>
+          <h3 class="text-xl text-rose-600 font-semibold mb-2">Autumn Whisper</h3>
+          <p class="text-sm text-rose-400">Pumpkin & warm spice blend</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md">
+          <div class="w-full h-48 bg-rose-100 rounded-xl mb-4"></div>
+          <h3 class="text-xl text-rose-600 font-semibold mb-2">Golden Glow</h3>
+          <p class="text-sm text-rose-400">Amber and sandalwood scent</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="bg-rose-50 py-20">
-    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
-      <div class="flex-1 h-64 bg-rose-200 rounded-2xl"></div>
-      <div class="flex-1">
-        <h2 class="text-3xl font-bold text-rose-900 mb-4">About Autumn Bliss</h2>
-        <p class="text-rose-700 leading-relaxed">Each Autumn Bliss candle is hand-crafted with love to bring you warm, nostalgic autumn vibes all year round. Our eco-friendly soy wax blends and gentle scents create cozy memories in every flicker.</p>
+  <!-- 🍂 About -->
+  <section class="relative z-10 py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-rose-700 mb-6">Our Story</h2>
+      <p class="text-rose-500 leading-relaxed">At Autumn Bliss, we craft candles with love, nostalgia, and a sprinkle of autumn magic. Every scent tells a story — of cozy evenings, falling leaves, and heartfelt warmth. Our candles are hand-poured with care to bring a little bliss into your every day.</p>
+    </div>
+  </section>
+
+  <!-- 💌 Testimonials -->
+  <section class="relative z-10 py-20 px-6 bg-rose-50">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-rose-700 mb-10">What Our Customers Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-2xl shadow-md">
+          <p class="text-rose-500 mb-4">“These candles make my room smell like a cozy café. Absolutely obsessed!”</p>
+          <span class="text-rose-400 font-semibold">— Priya</span>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md">
+          <p class="text-rose-500 mb-4">“Beautiful packaging and even better scents. So warm and comforting.”</p>
+          <span class="text-rose-400 font-semibold">— Aditi</span>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md">
+          <p class="text-rose-500 mb-4">“The perfect gift for literally anyone. They’re just so pretty!”</p>
+          <span class="text-rose-400 font-semibold">— Meera</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-bold text-center text-rose-900 mb-10">What Our Customers Say</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-lg transition">
-        <p class="text-rose-700 italic">“The Pumpkin Spice candle smells like fall in a jar. I’m obsessed!”</p>
-        <p class="mt-4 text-rose-500 font-semibold">— Emily</p>
-      </div>
-      <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-lg transition">
-        <p class="text-rose-700 italic">“So cozy and calming. I light it every night.”</p>
-        <p class="mt-4 text-rose-500 font-semibold">— Mia</p>
-      </div>
-      <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-lg transition">
-        <p class="text-rose-700 italic">“The packaging is just as beautiful as the scent.”</p>
-        <p class="mt-4 text-rose-500 font-semibold">— Chloe</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-rose-200 py-10 text-center text-rose-700">
-    <p>&copy; 2025 Autumn Bliss. All rights reserved.</p>
-    <p class="mt-1">Follow us on Instagram @autumn_bliss_24</p>
+  <!-- 🌸 Footer -->
+  <footer class="relative z-10 py-10 text-center text-rose-400 text-sm">
+    © 2025 Autumn Bliss · All Rights Reserved
   </footer>
 
 </body>
 </html>
+
 
